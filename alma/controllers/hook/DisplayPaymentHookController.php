@@ -154,6 +154,7 @@ final class DisplayPaymentHookController extends FrontendHookController
                 'old_prestashop_version' => version_compare(_PS_VERSION_, '1.6', '<'),
                 'apiMode' => Settings::getActiveMode(),
                 'merchantId' => Settings::getMerchantId(),
+                'activateFragment' => Settings::activateFragment(),
             ]
         );
 

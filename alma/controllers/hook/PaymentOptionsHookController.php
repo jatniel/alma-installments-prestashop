@@ -110,6 +110,7 @@ final class PaymentOptionsHookController extends FrontendHookController
                             'plans' => (array) $plans,
                             'apiMode' => Settings::getActiveMode(),
                             'merchantId' => Settings::getMerchantId(),
+                            'activateFragment' => Settings::activateFragment(),
                             'first' => $first,
                             'creditInfo' => $creditInfo,
                         ]);
@@ -142,6 +143,7 @@ final class PaymentOptionsHookController extends FrontendHookController
                             'plans' => (array) $plans,
                             'apiMode' => Settings::getActiveMode(),
                             'merchantId' => Settings::getMerchantId(),
+                            'activateFragment' => Settings::activateFragment(),
                             'first' => $first,
                             'creditInfo' => $creditInfo,
                         ]);

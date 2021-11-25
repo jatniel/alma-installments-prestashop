@@ -94,6 +94,7 @@ class Settings
             ExcludedCategoryAdminFormBuilder::ALMA_NOT_ELIGIBLE_CATEGORIES,
             'ALMA_STATE_REFUND',
             'ALMA_STATE_REFUND_ENABLED',
+            'ALMA_ACTIVATE_FRAGMENT',
             'ALMA_EXCLUDED_CATEGORIES',
             'ALMA_SHOW_PRODUCT_ELIGIBILITY',
             'ALMA_FEE_PLANS',
@@ -176,6 +177,11 @@ class Settings
     public static function showCategoriesWidgetIfNotEligible()
     {
         return (bool) (int) self::get('ALMA_CATEGORIES_WDGT_NOT_ELGBL', true);
+    }
+
+    public static function activateFragment()
+    {
+        return (bool) (int) self::get('ALMA_ACTIVATE_FRAGMENT', false);
     }
 
     public static function activePlans()
