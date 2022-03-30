@@ -37,6 +37,7 @@ if (!defined('ALMA_MODE_LIVE')) {
 }
 
 use Alma\PrestaShop\Forms\ExcludedCategoryAdminFormBuilder;
+use Alma\PrestaShop\Forms\FragmentAdminFormBuilder;
 use Alma\PrestaShop\Forms\PaymentButtonAdminFormBuilder;
 use Alma\PrestaShop\Model\CategoryAdapter;
 use Category;
@@ -94,7 +95,7 @@ class Settings
             ExcludedCategoryAdminFormBuilder::ALMA_NOT_ELIGIBLE_CATEGORIES,
             'ALMA_STATE_REFUND',
             'ALMA_STATE_REFUND_ENABLED',
-            'ALMA_ACTIVATE_FRAGMENT',
+            FragmentAdminFormBuilder::ALMA_ACTIVATE_FRAGMENT,
             'ALMA_EXCLUDED_CATEGORIES',
             'ALMA_SHOW_PRODUCT_ELIGIBILITY',
             'ALMA_FEE_PLANS',

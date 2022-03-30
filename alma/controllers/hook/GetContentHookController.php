@@ -34,6 +34,7 @@ use Alma\PrestaShop\Forms\ApiAdminFormBuilder;
 use Alma\PrestaShop\Forms\CartEligibilityAdminFormBuilder;
 use Alma\PrestaShop\Forms\DebugAdminFormBuilder;
 use Alma\PrestaShop\Forms\ExcludedCategoryAdminFormBuilder;
+use Alma\PrestaShop\Forms\FragmentAdminFormBuilder;
 use Alma\PrestaShop\Forms\PaymentButtonAdminFormBuilder;
 use Alma\PrestaShop\Forms\PnxAdminFormBuilder;
 use Alma\PrestaShop\Forms\ProductEligibilityAdminFormBuilder;
@@ -210,15 +211,6 @@ final class GetContentHookController extends AdminHookController
 
             $isStateRefundEnabled = (bool) Tools::getValue('ALMA_STATE_REFUND_ENABLED_ON');
             Settings::updateValue('ALMA_STATE_REFUND_ENABLED', $isStateRefundEnabled);
-
-            $activateFragment = (bool) Tools::getValue('ALMA_ACTIVATE_FRAGMENT_ON');
-            Settings::updateValue('ALMA_ACTIVATE_FRAGMENT', $activateFragment);
-
-            $activateFragment = (bool) Tools::getValue('ALMA_ACTIVATE_FRAGMENT_ON');
-            Settings::updateValue('ALMA_ACTIVATE_FRAGMENT', $activateFragment);
-
-            $activateFragment = (bool) Tools::getValue('ALMA_ACTIVATE_FRAGMENT_ON');
-            Settings::updateValue('ALMA_ACTIVATE_FRAGMENT', $activateFragment);
 
             $activateFragment = (bool) Tools::getValue('ALMA_ACTIVATE_FRAGMENT_ON');
             Settings::updateValue('ALMA_ACTIVATE_FRAGMENT', $activateFragment);
@@ -461,6 +453,7 @@ final class GetContentHookController extends AdminHookController
         $excludedBuilder = new ExcludedCategoryAdminFormBuilder($this->module, $this->context, $iconPath);
         $refundBuilder = new RefundAdminFormBuilder($this->module, $this->context, $iconPath);
         $paymentBuilder = new PaymentButtonAdminFormBuilder($this->module, $this->context, $iconPath);
+        $fragmentBuilder = new FragmentAdminFormBuilder($this->module, $this->context, $iconPath);
         $debugBuilder = new DebugAdminFormBuilder($this->module, $this->context, $iconPath);
 
         $fieldsForms = [];
@@ -474,6 +467,7 @@ final class GetContentHookController extends AdminHookController
             $fieldsForms[] = $paymentBuilder->build();
             $fieldsForms[] = $excludedBuilder->build();
             $fieldsForms[] = $refundBuilder->build();
+            $fieldsForms[] = $fragmentBuilder->build();
         }
         $fieldsForms[] = $apiBuilder->build();
         $fieldsForms[] = $debugBuilder->build();
