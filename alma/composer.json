@@ -3,7 +3,7 @@
     "description": "Payment method module to integrate Alma in PrestaShop",
     "type": "library",
     "require": {
-        "alma/alma-php-client": "dev-feature/share-of-checkout"
+        "alma/alma-php-client": "^1.6.0"
     },
     "autoload": {
         "psr-4": {
