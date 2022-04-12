@@ -1,5 +1,8 @@
 # Changelog
 
+## v2.x.x
+- WIP: Feature Share of Checkout
+
 ## v2.6.1
 
 - Fixed at the installation of the module if you had php 5.6
